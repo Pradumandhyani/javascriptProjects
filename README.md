@@ -1,2 +1,2 @@
-# javascriptProjects
-i develope these projects using javascript and using Api's
+# basic html,css and javascriptProject
+
