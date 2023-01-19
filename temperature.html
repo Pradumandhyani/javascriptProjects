@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temperature converter</title>
+    <style>
+        body{
+            padding:50px;
+            background-color: black;
+        }
+        h1{
+            text-align: center;
+            color:aquamarine;
+        }
+        #container{
+            text-align: center;
+
+            background-color: blueviolet;
+            padding: 50px;
+        }
+        .input-div{
+            display: inline-block;
+        }
+        .inp{
+            padding:5px;
+            font-size: 30px;
+            font-weight: bold;
+            width: 250px;
+            text-align: center;
+        }
+        label{
+            font-size: 22px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Temperature converter</h1>
+    <div id="container">
+        <div class="input-div">
+            <label>Celcius</label><br>
+            <input type="number" value="0" id="cel" class="inp">
+        </div>
+        <div class="input-div">
+        <label>Fahrenheit</label><br>
+        <input type="number" value="32" id="farh" class="inp">
+    </div>
+        <div class="input-div">
+        <label>kelvin</label><br>
+        <input type="number" value="273" id="kel" class="inp">
+    </div>  
+</div>
+    <script>
+        var cel =document.getElementById("cel");
+        var farh =document.getElementById("farh");
+        var kel =document.getElementById("kel");
+
+        cel.addEventListener('input',function(){
+            let c=this.value;
+            let f=(c*9/5)+32;
+            let k=(c*1+273);
+            
+            farh.value=f.toFixed(4);
+            kel.value=k.toFixed(4);
+
+        });
+            
+        
+        farh.addEventListener('input',function(){
+            let f=this.value;
+            let c=(f-32)*5/9;
+            let k=(f-32)*5/9+273;
+            cel.value=c.toFixed(4);
+            kel.value=k.toFixed(4);
+
+        });
+        kel.addEventListener('input',function(){
+            let k=this.value;
+            let c=k*1-273;
+            let f=(k-273)*9/5+32;
+            cel.value=c.toFixed(4);
+            farh.value=f.toFixed(4);
+        });
+    </script>
+</body>
+</html>
